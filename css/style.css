@@ -1,0 +1,328 @@
+/* ===========================
+   BENGKULU – Bumi Rafflesia
+   Custom Styles
+=========================== */
+
+:root {
+  --green-deep: #1a4731;
+  --green-mid:  #2d6a4f;
+  --green-leaf: #52b788;
+  --gold:       #c9a84c;
+  --gold-light: #f0c75e;
+  --cream:      #faf8f3;
+  --dark:       #111827;
+  --gray:       #6b7280;
+}
+
+* { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--dark);
+  overflow-x: hidden;
+}
+
+/* ---- TYPOGRAPHY ---- */
+.hero-title,
+.section-heading,
+.brand-name { font-family: 'Playfair Display', serif; }
+
+.section-heading em { color: var(--green-leaf); font-style: normal; }
+
+/* ---- NAVBAR ---- */
+#mainNav {
+  background: transparent;
+  transition: background 0.4s, box-shadow 0.4s;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+#mainNav.scrolled {
+  background: rgba(26, 71, 49, 0.97);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+.brand-leaf { font-size: 1.5rem; }
+.brand-name { font-size: 1.4rem; color: #fff; letter-spacing: 0.5px; }
+.navbar-nav .nav-link {
+  color: rgba(255,255,255,0.85) !important;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+.navbar-nav .nav-link:hover { color: var(--gold-light) !important; }
+
+/* ---- HERO ---- */
+.hero-section {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.carousel, .carousel-inner, .carousel-item { height: 100%; }
+.hero-slide {
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-content { padding: 1rem; max-width: 800px; }
+.badge-eyebrow {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.4rem 1.2rem;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+}
+.hero-title {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+}
+.hero-sub {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Carousel dots */
+.carousel-indicators [data-bs-target] {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  border: none;
+}
+.carousel-indicators .active { background: var(--gold-light); width: 28px; border-radius: 4px; }
+
+.scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  animation: bounce 2s infinite;
+  opacity: 0.7;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ---- CUSTOM BUTTON ---- */
+.btn-primary-custom {
+  background: var(--green-mid);
+  color: #fff;
+  border: none;
+  transition: all 0.3s;
+}
+.btn-primary-custom:hover {
+  background: var(--green-deep);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(45, 106, 79, 0.4);
+}
+
+/* ---- STATS STRIP ---- */
+.stats-strip {
+  background: var(--green-deep);
+  padding: 2rem 0;
+}
+.stat-item {
+  padding: 1rem;
+  border-right: 1px solid rgba(255,255,255,0.15);
+}
+.stat-item:last-child { border-right: none; }
+.stat-num {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--gold-light);
+}
+.stat-label {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.65);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.2rem;
+}
+
+/* ---- SECTIONS ---- */
+.section-pad { padding: 5rem 0; }
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--green-leaf);
+  margin-bottom: 0.75rem;
+}
+.section-eyebrow.light { color: var(--gold-light); }
+
+.section-heading {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+/* ---- ABOUT ---- */
+.about-img-wrap { position: relative; }
+.main-about-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.about-badge-card {
+  position: absolute;
+  bottom: -1.5rem;
+  left: -1.5rem;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+.about-feat {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--cream);
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* ---- WISATA CARDS ---- */
+.wisata-card {
+  border-radius: 1rem !important;
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+}
+.wisata-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.15) !important;
+}
+.wisata-card-img-wrap { position: relative; overflow: hidden; }
+.wisata-card-img-wrap img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.wisata-card:hover .wisata-card-img-wrap img { transform: scale(1.07); }
+.wisata-badge { position: absolute; top: 0.75rem; left: 0.75rem; }
+
+/* ---- GALERI ---- */
+.galeri-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  aspect-ratio: 1;
+}
+.galeri-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.galeri-item:hover img { transform: scale(1.1); }
+.galeri-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 71, 49, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  color: #fff;
+  font-size: 1.5rem;
+}
+.galeri-item:hover .galeri-overlay { opacity: 1; }
+
+/* ---- CONTACT ---- */
+.contact-info-list { display: flex; flex-direction: column; gap: 1.25rem; }
+.contact-info-item { display: flex; align-items: flex-start; gap: 1rem; }
+.contact-icon {
+  width: 44px; height: 44px;
+  background: rgba(45, 106, 79, 0.1);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--green-mid);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.social-btn {
+  width: 40px; height: 40px;
+  background: var(--cream);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--green-mid);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.social-btn:hover {
+  background: var(--green-mid);
+  color: #fff;
+  transform: translateY(-3px);
+}
+.contact-form-wrap { background: #fff; }
+.form-control:focus, .form-select:focus {
+  border-color: var(--green-leaf);
+  box-shadow: 0 0 0 0.2rem rgba(82, 183, 136, 0.2);
+}
+
+/* ---- FOOTER ---- */
+.footer-section { background: #0d1f17; }
+.footer-links { list-style: none; padding: 0; }
+.footer-links li { margin-bottom: 0.5rem; }
+.footer-links a {
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--gold-light); }
+
+/* ---- BACK TO TOP ---- */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px; height: 44px;
+  background: var(--green-mid);
+  color: #fff;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  z-index: 999;
+  box-shadow: 0 4px 15px rgba(45, 106, 79, 0.4);
+}
+.back-to-top.visible { opacity: 1; pointer-events: all; }
+.back-to-top:hover { background: var(--green-deep); color: #fff; transform: translateY(-3px); }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+  .about-badge-card { display: none; }
+  .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .stat-item:last-child { border-bottom: none; }
+}
